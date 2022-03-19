@@ -40,12 +40,10 @@ class MinHeap{
         }
 
     public:
-        MinHeap(){};
-        MinHeap(std::vector<int> &data){
+        MinHeap()= default;;
+        explicit MinHeap(std::vector<int> &data){
             for(int value : data){
-                heap.push_back(value);
-                int index = getSize()-1;
-                heapifyUp(index);
+                push(value);
             }
         }
         ~MinHeap(){heap.clear();}
@@ -69,8 +67,8 @@ class MinHeap{
 
         void print(){
             if (!isEmpty()){
-                for(int i =0; i<getSize();i++){
-
+                for (int i =0; i<getSize();i++){
+                    std::cout<<heap[i];
                 }
             }
         }
@@ -79,6 +77,9 @@ class MinHeap{
 };
 
 int main() {
-
+//    std::vector<int> arr= {1,2,3,4,5,6,7,8,9};
+//    MinHeap mh(arr);
+//    mh.print();
+    std::cout << "Hello, World!" << std::endl;
     return 0;
 }
